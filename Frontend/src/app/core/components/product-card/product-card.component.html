@@ -1,0 +1,13 @@
+<div class="product">
+    <div class="info">
+        <h3 class="title">{{product.name}}</h3>
+        <h5 class="category">Category: {{product.categoryName}}</h5>
+        <h5 class="unitsInStock">{{"Units in stock: " + product.unitsInStock}}</h5>
+        <h5 class="price">{{product.price | currency}}</h5>
+        <div *ngIf="authenticated">
+            <button (click)="onDeleteClick()">Delete</button>
+            <button (click)="onEditClick()">Edit</button>
+        </div>
+    </div>
+    
+</div>

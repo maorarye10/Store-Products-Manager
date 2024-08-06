@@ -1,0 +1,31 @@
+.homepage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90dvh;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    border: 1px solid grey;
+    color: white;
+    background-color: grey;
+    border-radius: 3px;
+    padding: 3px;
+    width: 110px;
+    text-align: center;
+}

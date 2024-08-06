@@ -1,0 +1,6 @@
+<div class="add-product">
+    <h1>Add Product:</h1>
+    <span *ngIf="success">Product added successfuly</span>
+    <app-product-form [btnActionName]="'Add'" [clearFormOnSubmit]="true" (clickEvent)="onClickEvent($event)"></app-product-form>
+</div>
+

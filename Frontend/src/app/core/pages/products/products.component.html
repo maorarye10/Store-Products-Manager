@@ -1,0 +1,25 @@
+<div class="products">
+    <header>
+        <div *ngIf="!authenticated">
+            <a href="/register">Register</a> /
+            <a href="/login">Login</a>
+        </div>
+        <button *ngIf="authenticated" (click)="onLogOutClick()">LogOut</button>
+    </header>
+    
+    <h1>Products:</h1>
+
+    <img *ngIf="isLoading" class="spinner" src="assets/spinner.svg" alt="loading spinner">
+    <div class="grid-container">
+        <app-filter-sort-form class="filter-sort" (formSubmitEvent)="filterAndSortProducts($event)"></app-filter-sort-form>
+        <div *ngIf="!isLoading" class="products-container">
+            <app-product-card class="product" *ngFor="let product of products" [product]="product" (deleteEvent)="onDeleteEvent($event)" (editEvent)="onEditEvent($event)"></app-product-card>
+        </div>
+        <button *ngIf="authenticated" class="add" (click)="onAddProductClick()">Add Product</button>
+    </div>
+    
+    <div class="navigators">
+        <button *ngIf="query.pageNumber > 1" (click)="onPreviousClick()">←</button>
+        <button *ngIf="query.pageNumber < pagesCount" (click)="onNextClick()">→</button>
+    </div>
+</div>

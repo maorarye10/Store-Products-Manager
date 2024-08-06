@@ -1,0 +1,27 @@
+<section class="register">
+    <h1>Register</h1>
+    <form [formGroup]="registerForm" (ngSubmit)="submit()">
+        <div>
+            <label for="username">Username</label>
+            <input formControlName="username" type="text" name="username" id="username" (focus)="onInputFocus()">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input formControlName="password" type="password" name="password" id="password" (focus)="onInputFocus()">
+        </div>
+        <button>Register</button>
+        <small class="signin">Already have a user? <a href="/login">Sign-in!</a></small>
+        <div class="errors" *ngIf="(registerForm.get('username')?.invalid || registerForm.get('password')?.invalid) && showError">
+            Errors:
+            <small *ngIf="registerForm.get('username')?.hasError('required')">Username field is required</small>
+            <small *ngIf="registerForm.get('username')?.hasError('minlength') || registerForm.get('username')?.hasError('maxlength')">username length must be between 3-20 characters</small>
+            <small *ngIf="registerForm.get('password')?.hasError('required')">Password field is required</small>
+            <small *ngIf="registerForm.get('password')?.hasError('pattern')">Password must contain at least 8 characters, 1 lower case letter, and 1 upper case letter</small>
+        </div>
+        <div *ngIf="showError">
+            <small>{{errorMessage}}</small>
+        </div>
+
+    </form>
+</section>
+

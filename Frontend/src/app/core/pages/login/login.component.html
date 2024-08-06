@@ -1,0 +1,16 @@
+<section class="login">
+    <h1>Log-in</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <div>
+            <label for="username">Username</label>
+            <input formControlName="username" type="text" name="username" id="username" (focus)="onInputFocus()">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input formControlName="password" type="password" name="password" id="password" (focus)="onInputFocus()">
+        </div>
+        <button>Login</button>
+        <small>Don't have a user yet? <a href="/register">Register!</a></small>
+        <h4>{{error}}</h4>
+    </form>
+</section>

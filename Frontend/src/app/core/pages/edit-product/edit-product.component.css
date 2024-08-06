@@ -1,0 +1,16 @@
+.edit-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    text-decoration: underline;
+    font-size: 50px;
+}
+
+span {
+    color: greenyellow;
+    margin-bottom: 15px;
+}

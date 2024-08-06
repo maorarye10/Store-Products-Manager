@@ -1,0 +1,42 @@
+
+
+form{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: medium;
+}
+
+h4 {
+    color: red;
+}
+
+small {
+    color: red;
+}
+
+.errors {
+    text-align: center;
+}
+.signin {
+    color: black;
+}
+
+select {
+    width: 170px;
+}
+
+span {
+    color: greenyellow;
+}

@@ -1,0 +1,33 @@
+<h3>Filter & Sort</h3>
+<form [formGroup]="sortFilterForm" (submit)="onFormSubmit()">
+    <div>
+        <label for="name">Product name:</label>
+        <input formControlName="name" type="text" name="name" id="name">
+    </div>
+
+    <div>
+        <label for="category">Category:</label>
+        <select formControlName="category" name="category" id="category">
+            <option [value]="0" selected>None</option>
+            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="sortBy">Sort By:</label>
+        <select formControlName="sortBy" name="sortBy" id="sortBy">
+            <option value="" selected>None</option>
+            <option value="Name">Name</option>
+            <option value="Price">Price</option>
+            <option value="UnitsInStock">Units In Stock</option>
+            <option value="CategoryName">Category Name</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="isDecending">Decending:</label>
+        <input formControlName="isDecending" type="checkbox" name="isDecending" id="isDecending">
+    </div>
+
+    <button>Search</button>
+</form>

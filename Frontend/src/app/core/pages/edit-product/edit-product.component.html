@@ -1,0 +1,5 @@
+<div class="edit-product">
+    <h1>Edit Product:</h1>
+    <span *ngIf="success">Product changed successfuly</span>
+    <app-product-form *ngIf="loaded" [product]="product" [btnActionName]="'Save'" [clearFormOnSubmit]="false" (clickEvent)="onClickEvent($event)"></app-product-form>
+</div>

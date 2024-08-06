@@ -1,0 +1,50 @@
+.register {
+    height: 90dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-top: 50px;
+    text-decoration: underline;
+    font-size: 50px;
+}
+
+form{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: medium;
+}
+
+h4 {
+    color: red;
+}
+
+small {
+    color: red;
+}
+
+.errors {
+    text-align: center;
+}
+.signin {
+    color: black;
+}
+
+/* input {
+    margin-left: 10px;
+} */

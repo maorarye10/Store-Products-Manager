@@ -1,0 +1,35 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="name">Name</label>
+        <input formControlName="name" type="text" name="name" id="name" >
+    </div>
+    <div>
+        <label for="price">Price</label>
+        <input formControlName="price" type="text" name="price" id="price" >
+    </div>
+    <div>
+        <label for="unitsInStock">Units in stock</label>
+        <input formControlName="unitsInStock" type="text" name="unitsInStock" id="unitsInStock" >
+    </div>
+    <div>
+        <label for="category">Category</label>
+        <select formControlName="categoryId" name="categoryId" id="category">
+            <option selected *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+        </select>
+    </div>
+    <button>{{btnActionName}}</button>
+    <button (click)="onGoBackClick()">Go back</button>
+    <div class="errors" *ngIf="(productForm.get('name')?.invalid || productForm.get('price')?.invalid || productForm.get('unitsInStock')?.invalid || productForm.get('categoryId')?.invalid) && showError">
+        Errors:
+        <small *ngIf="productForm.get('name')?.hasError('required')">Product name field is required</small>
+        <small *ngIf="productForm.get('name')?.hasError('minlength')">Product name length must be at least 3 characters</small>
+        <small *ngIf="productForm.get('price')?.hasError('required')">Price field is required</small>
+        <small *ngIf="productForm.get('price')?.hasError('pattern')">Price must be a positive number</small>
+        <small *ngIf="productForm.get('unitsInStock')?.hasError('required')">Units field is required</small>
+        <small *ngIf="productForm.get('unitsInStock')?.hasError('pattern')">Units number must be a positive number</small>
+        <small *ngIf="productForm.get('categoryId')?.hasError('required')">Category field is required</small>
+    </div>
+    <div *ngIf="showError">
+        <small>{{errorMessage}}</small>
+    </div>
+</form>
